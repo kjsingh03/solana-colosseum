@@ -15,8 +15,12 @@ export default function Home() {
         mnemonic &&
         <Mnemonic />
       }
-      <div className="flex flex-col gap-4 py-20">
-        <p>Home</p>
+      <div className="w-[80%] mx-auto py-24">
+
+        <div className="flex flex-col gap-4 bg-red-600">
+          <h1 className="text-3xl">Upcoming Concerts</h1>
+        </div>
+
       </div>
     </>
   );

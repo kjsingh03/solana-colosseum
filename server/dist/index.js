@@ -2,6 +2,7 @@ import Express from 'express';
 import userRouter from './routers/index.js';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import concertRouter from './routers/concert.js';
 const PORT = process.env.PORT;
 const app = Express();
 (async () => {
@@ -15,7 +16,8 @@ const app = Express();
 })();
 app.use(cors())
     .use(Express.json())
-    .use('/auth', userRouter);
+    .use('/auth', userRouter)
+    .use('/concert', concertRouter);
 app.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
 });

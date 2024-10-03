@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import { Request, Response } from 'express';
-import { User } from '../models/user.js';
+import { User } from '../models/index.js';
 import * as Web3 from '@solana/web3.js';
 import * as bip39 from 'bip39';
 import { derivePath } from 'ed25519-hd-key';
@@ -11,7 +11,7 @@ export const googleLogin = async (req: Request, res: Response) => {
     try {
         const { email } = req.body;
         if (email) {
-            let user = await User.findOne({ email })
+            let user = await User.findOne({ email })            
             if (user) {
                 var token = jwt.sign({ email }, jwtSecret);
                 user.token = token;

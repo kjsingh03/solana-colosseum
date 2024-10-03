@@ -29,6 +29,7 @@ export default function Navbar() {
 
                 <ul className="flex items-center justify-center gap-8 ">
                     <li><Link href="/" >Home</Link></li>
+                    <li><Link href="/add" >Add</Link></li>
                     {
                         !user.email ?
                             <li><Link href="/login" >Login</Link></li> :
